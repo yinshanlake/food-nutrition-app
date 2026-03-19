@@ -1,0 +1,276 @@
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #213547;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-height: 100vh;
+}
+
+.app {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  width: 100%;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: white;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.header p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.search-form {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.search-input {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  outline: none;
+  transition: box-shadow 0.3s;
+}
+
+.search-input:focus {
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.search-button {
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background: white;
+  color: #667eea;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: all 0.3s;
+}
+
+.search-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.search-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error {
+  background: #ffebee;
+  color: #c62828;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.results {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.advice-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  border-left: 6px solid;
+}
+
+.advice-header h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.rating {
+  font-size: 1rem;
+  margin-left: auto;
+}
+
+.reason {
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.advice-tips,
+.advice-recipes {
+  margin-top: 1.5rem;
+}
+
+.advice-tips h3,
+.advice-recipes h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  color: #333;
+}
+
+.advice-tips ul,
+.advice-recipes ul {
+  list-style: none;
+  padding: 0;
+}
+
+.advice-tips li,
+.advice-recipes li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.advice-tips li:before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #667eea;
+  font-weight: bold;
+}
+
+.advice-recipes li:before {
+  content: "•";
+  position: absolute;
+  left: 0.5rem;
+  color: #FF9800;
+  font-weight: bold;
+}
+
+.nutrition-cards h3 {
+  color: white;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.nutrition-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin-bottom: 1rem;
+  transition: box-shadow 0.3s;
+}
+
+.nutrition-card:hover {
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.card-header strong {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.source-badge {
+  display: inline-block;
+  background: #667eea;
+  color: white;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  margin-left: 0.75rem;
+}
+
+.expand-icon {
+  color: #667eea;
+  font-size: 0.9rem;
+}
+
+.card-quick-info,
+.card-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+}
+
+.card-details {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}
+
+.nutrient {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.nutrient .label {
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.nutrient .value {
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 3rem;
+  padding: 1.5rem;
+  color: white;
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .app {
+    padding: 1rem;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .search-form {
+    flex-direction: column;
+  }
+
+  .card-quick-info,
+  .card-details {
+    grid-template-columns: 1fr 1fr;
+  }
+}
